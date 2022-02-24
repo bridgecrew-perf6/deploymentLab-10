@@ -28,8 +28,15 @@ app.post('/api/student', (req, res)=>{
     } else if (name === ''){
         rollbar.critical('No name given')
         res.status(400).send('must provide a name.')
-    } else {
-        rollbar.warning('student already exists')
+    }else if(name === 'Tyler'){
+        rollbar.warning("That's my name.")
+        res.status(400).send('Pick a different name, loser')
+    }else if(name === 'Meg'){
+        rollbar.info("That is my partner's name")
+        res.status(400).send('Pick a different name, loser #2')
+    } 
+    else {
+        rollbar.error('student already exists')
         res.status(400).send('that student already exists')
     }
     // try {
