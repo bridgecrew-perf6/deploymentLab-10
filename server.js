@@ -16,24 +16,34 @@ app.use(express.json())
 let students = []
 
 app.post('/api/student', (req, res)=>{
-    let {name} = req.body
-    name = name.trim()
+    // let {name} = req.body
+    // name = name.trim()
 
-    const index = students.findIndex(studentName=> studentName === name)
+    // const index = students.findIndex(studentName=> studentName === name)
 
-    if(index === -1 && name !== ''){
-        students.push(name)
-        rollbar.log('Student added successfully', {author: 'Scott', type: 'manual entry'})
-        res.status(200).send(students)
-    } else if (name === ''){
-        rollbar.error('No name given')
-        res.status(400).send('must provide a name.')
-    } else {
-        rollbar.error('student already exists')
-        res.status(400).send('that student already exists')
-    }
+    // if(index === -1 && name !== ''){
+    //     students.push(name)
+    //     rollbar.log('Student added successfully', {author: 'Scott', type: 'manual entry'})
+    //     res.status(200).send(students)
+    // } else if (name === ''){
+    //     rollbar.error('No name given')
+    //     res.status(400).send('must provide a name.')
+    // } else {
+    //     rollbar.error('student already exists')
+    //     res.status(400).send('that student already exists')
+    // }
+    try {
+        nonExistentFunction();
+      } catch (error) {
+        console.error(error);
+        // expected output: ReferenceError: nonExistentFunction is not defined
+        // Note - error messages will vary depending on browser
+      }
+      
 
 })
+
+
 
 app.use(rollbar.errorHandler())
 
