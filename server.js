@@ -32,6 +32,8 @@ app.post('/api/student', (req, res)=>{
 
 })
 
+app.use(rollbar.errorHandler())
+
 app.get('/', function(req, res){
     res.sendFile(path.join(__dirname, 'index.html'))
 })
