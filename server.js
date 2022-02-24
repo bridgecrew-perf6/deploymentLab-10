@@ -13,8 +13,18 @@ const rollbar = new Rollbar({
 rollbar.log('Hello world!')
 app.use(express.json())
 
-let students = []
+let catPicTrue = false
 
+app.post('/api/cat', (req, res)=>{
+    if(catPicTrue === false){
+        rollbar.info('here is a cat pic')
+        catPicTrue = true
+    }else if(catPicTrue === true){
+        rollbar.critical(`that's too many cats`)
+    }
+})
+
+let students = []
 app.post('/api/student', (req, res)=>{
     let {name} = req.body
     name = name.trim()

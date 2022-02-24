@@ -10,3 +10,11 @@ aside{
     font-family: 'Times New Roman', Times, serif;
 
 }
+.cat{
+    background-color: darkorange;
+    color: orange;
+    font-family: 'Courier New', Courier, monospace'
+}
+#catPic{
+    background-image: 'IMG_20130112_111853_032 (1).jpg';
+}
