@@ -13,6 +13,8 @@ const rollbar = new Rollbar({
 rollbar.log('Hello world!')
 app.use(express.json())
 
+let students = []
+
 app.post('/api/student', (req, res)=>{
     let {name} = req.body
     name = name.trim()
