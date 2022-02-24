@@ -11,6 +11,7 @@ const rollbar = new Rollbar({
 
 // record a generic message and send it to Rollbar
 rollbar.log('Hello world!')
+app.use(express.json())
 
 app.post('/api/student', (req, res)=>{
     let {name} = req.body
