@@ -15,6 +15,6 @@ aside{
     color: orange;
     font-family: 'Courier New', Courier, monospace'
 }
-#catPic{
+.catPic{
     background-image: 'IMG_20130112_111853_032 (1).jpg';
 }

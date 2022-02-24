@@ -68,10 +68,10 @@
         addForm.addEventListener('submit', submitHandler)
     </script>
 
-    <button id="cat">Get a cat</button>
+    <button class="cat">Get a cat</button>
     <script>
       function getACat(e){
-        e.preventDefault()
+        // e.preventDefault()
         axios.post('/api/cat')
         .then(res =>{
           const catPic = document.createElement('div')
