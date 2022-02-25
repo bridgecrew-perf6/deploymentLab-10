@@ -19,8 +19,11 @@ app.post('/api/cat', (req, res)=>{
     if(catPicTrue === false){
         rollbar.info('here is a cat pic')
         catPicTrue = true
+        res.status(200).send('great success')
     }else if(catPicTrue === true){
         rollbar.critical(`that's too many cats`)
+        res.status(400).send('thats too many cats')
+
     }
 })
 
